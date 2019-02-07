@@ -1,13 +1,3 @@
----
-date: 2019-02-01
-layout: post
-comments: yes
-code: yes
-title: Vim入门
-categories: 笔记
-tags: [Vim]
----
-
 ![vim.png][1]
 
 ## 什么是 Vim？
