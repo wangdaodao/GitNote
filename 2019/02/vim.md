@@ -1,4 +1,4 @@
-![vim.png](0)
+![vim.png](https://raw.githubusercontent.com/wangdaodao/note/master/img/vim.png)
 
 ## 什么是 Vim？
 
