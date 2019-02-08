@@ -1,4 +1,4 @@
-![vim.png](https://raw.githubusercontent.com/wangdaodao/note/master/img/vim.png)
+![20190208212340.png](https://raw.githubusercontent.com/wangdaodao/MyNoteBook/master/img/20190208212340.png)
 
 ## 什么是 Vim？
 
@@ -19,23 +19,23 @@ vi的学习曲线可能比较陡峭。vi分为命令模式（Command mode），�
 
 在自己电脑属性中找到**高级系统设置**
 
-![电脑属性.png][4]
+![20190208212436.png](https://raw.githubusercontent.com/wangdaodao/MyNoteBook/master/img/20190208212436.png)
 
 找到环境变量
 
-![环境变量.png][5]
+![20190208212502.png](https://raw.githubusercontent.com/wangdaodao/MyNoteBook/master/img/20190208212502.png)
 
 找到系统变量
 
-![系统变量.png][6]
+![20190208212611.png](https://raw.githubusercontent.com/wangdaodao/MyNoteBook/master/img/20190208212611.png)
 
 添加vim的安装目录
 
-![添加vim.png][7]
+![20190208212628.png](https://raw.githubusercontent.com/wangdaodao/MyNoteBook/master/img/20190208212628.png)
 
 然后在命令行下面试试输入`vim`
 
-![cmd.png][8]
+![20190208212641.png](https://raw.githubusercontent.com/wangdaodao/MyNoteBook/master/img/20190208212641.png)
 
 ## 基本模式
 
@@ -119,8 +119,3 @@ Vim和Vi一样具有三种模式：命令模式（Command mode），插入模式
 
   [2]: http://www.vim.org
   [3]: https://www.vim.org/download.php
-  [4]: https://wangdaodao.com/usr/uploads/2019/02/3271698925.png
-  [5]: https://wangdaodao.com/usr/uploads/2019/02/1904838753.png
-  [6]: https://wangdaodao.com/usr/uploads/2019/02/3553887321.png
-  [7]: https://wangdaodao.com/usr/uploads/2019/02/553390298.png
-  [8]: https://wangdaodao.com/usr/uploads/2019/02/4239255454.png
