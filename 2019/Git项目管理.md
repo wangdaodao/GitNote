@@ -135,6 +135,20 @@ git checkout -b daily/0.0.1       // 创建一个分支
 git push -delete <remote_name> <branchName> // 大多数情况remote_name为origin
 ```
 
+## Git提交信息检查
+
+```
+git diff                              // 查看当前工作区改动点
+git diff commit_hash1 commit_hash2    // 提交hash1和hash2的差异
+git diff branch_a branch_b            // 分支a和b的差异
+git status                            // 当前改动文件
+git log                               // 查看提交历史
+git log --pretty=oneline              // 提交历史缩减一行查看，主要是提交Hash值
+```
+
+## Git高阶操作
+
+
 
 原文链接：[https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9](https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9)
 
