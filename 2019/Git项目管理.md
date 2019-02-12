@@ -78,3 +78,16 @@ node_module
 
 ## Git基本操作
 
+### 如何操作一次完整提交流程
+
+当一个文件修改，我们想把他提交到github上面， 一次完整提交路径是从`工作区 --> 缓存区 --> 本地仓库区 --> 远端仓库`
+
+```
+vi readme.md              // 修改readme文件，文件在工作区
+git add readme.md         // 文件进入缓存区，缓存区的文件可以被checkout移除到工作区
+git commit 'add readme'   // 文件进入提交分支，但还是在本地
+git push origin master    // 提交分支 push 到远端分支
+```
+
+原文链接：https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9
+
