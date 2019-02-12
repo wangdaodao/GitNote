@@ -39,5 +39,12 @@ Git的每个分支的管理类似于链表，每次提交都会产生一个SHA1�
 
 要理解Git内部构造的核心，我们应理解三个东西： **实体**、**引用**、 **索引**。
 
+![Git内部构造](https://raw.githubusercontent.com/wangdaodao/GitImg/master/img/20190213074817.png)
 
+1. **实体**：你提交到一个Git代码仓库中的所有文件，包括每个提交的说明信息（the commit info）都在目录 .git/objects/中存储为实体。一个实体以一个40字符长度的字符串（该实体内容的SHA1哈希值）来标识。
+2. **引用**：Git中，一个分支（branch）、远程分支（remote branch）或一个标签（tag）（也称为轻量标签）仅是指向一个实体的一个指针，这里的实体通常是一个commit实体。这些引用以文本文件的形式存储在目录.git/refs/中。
+3. **索引**：索引是一个暂存区，以二进制文件的形式存储为文件.git/index。当git add一个文件，Git将该文件的信息添加到索引中。当git commit，Git仅提交索引文件中列出的文件。
 
+## Git初始化
+
+### 
