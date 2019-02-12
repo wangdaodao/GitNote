@@ -148,6 +148,19 @@ git log --pretty=oneline              // 提交历史缩减一行查看，主要
 
 ## Git高阶操作
 
+### 如何使用`merge`, `cherry-pick`和`patch`
+
+多人协同开发中我们需要合并别人的代码，使本地代码保持最新状态，git提供了三种合并的方式。对于初学者很少有人知道这些差别。下图就列举了三种操作的使用场景。
+
+![黑科技](https://raw.githubusercontent.com/wangdaodao/GitImg/master/img/20190213075744.png)
+
+
+### 如何删除git缓存文件
+
+情况：有些情况开发者把原有不需要提交的代码提交到了远端仓库，再使用.gitignore忽略文件不生效。哪怕我们删除后再提交也没有办法忽略。这种情况下我们应该怎么解决？
+
+方法：我们可以使用git rm --cache 删除原来git跟踪的文件缓存，再在.gitignore里面添加忽略文件
+
 
 
 原文链接：[https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9](https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9)
