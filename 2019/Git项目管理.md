@@ -96,6 +96,13 @@ git push origin master    // 提交分支 push 到远端分支
 ```
 git pull : git fetch + git merge
 git pull --rebase: git fetch + git rebase
+```
+
+![如何操作一次完整更新流程](https://raw.githubusercontent.com/wangdaodao/GitImg/master/img/20190213075448.png)
+
+## Git配置
+
+
 
 
 
