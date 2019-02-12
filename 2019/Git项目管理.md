@@ -60,8 +60,21 @@ git clone <url> -b <branch>   // [高阶用法] clone git仓库并且制定分�
 
 大多数 Git 服务器都会选择使用 SSH 公钥来进行授权。例如在github或者gitlab上提交代码，我们需要把SSH公钥复制托管到Github的`personal setting -> ssh keys`
 
-```language
+```
 cd ~/.ssh             //进入ssh目录
 ssh-keygen            // 生成ssh公私钥
 cat ~/.ssh/id_rsa.pub // 复制ssh公钥
 ```
+
+### Git忽略不应该跟踪的文件
+
+`.gitignore`文件显式地指定了哪些文件不应被Git追踪，即被Git忽略掉。例如开发过程中 `node_module`，`.vscode`等文件不需要被跟踪和提交，可以在初始化的忽略它们。·
+
+```
+// .gitignore 文件
+node_module
+.vscode
+```
+
+## Git基本操作
+
