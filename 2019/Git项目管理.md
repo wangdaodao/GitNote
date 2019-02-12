@@ -102,9 +102,38 @@ git pull --rebase: git fetch + git rebase
 
 ## Git配置
 
+### 修改用户信息
 
+```
+git config --list                                   // 配置信息列表
+git config --global user.name "John Doe"            // 设置用户名
+git config --global user.email johndoe@example.com  // 设置邮箱
+```
 
+### 设置不同的仓库源
 
+```
+git remote --help               // 查看帮助
+git remote                      // 查看不同源
+git remote add [name] [url]     // 添加不同地址的源，并取一个别名
+git remote remove [name]        // 删除一个源
+```
+
+## 分支管理
+
+注意：本地分支删除了，并不代表远端分支删除。如何定期清理远端分支。
+
+```
+git checkout -b daily/0.0.1       // 已当前分支为基础，创建daily/0.0.1分支
+
+git branch -la                    // 查看本地分支及远端分支
+git branch -D [branchName]        // 强制删除本地分支
+git branch -d [branchName]        // 删除已经Merge过的分支
+git checkout -b daily/0.0.1       // 创建一个分支
+
+// 如何删除远端多余分支
+git push -delete <remote_name> <branchName> // 大多数情况remote_name为origin
+```
 
 
 原文链接：[https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9](https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9)
