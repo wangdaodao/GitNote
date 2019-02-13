@@ -198,7 +198,20 @@ git commit -m "revert"
 git push origin master
 ```
 
+### 如何创建Tag，如何以某个Tag创建分支
 
+```
+## 创建tag
+git tag -a daily/0.0.1 -m "add develop file" // 创建标注标签
+git tag daily/0.0.1 // 简单创建tag
+
+## 分享tag到远端
+git push origin [tagname]
+git push origin --tags 
+
+## 如何已某个tag创建分支
+git checkout -b <newbranch> <tagname>
+```
 
 
 
