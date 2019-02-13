@@ -179,5 +179,28 @@ git rm --cached file_path       // PS: file_path 为文件路径
 git push origin master --force // 强制更新，慎用
 ```
 
+### 如何使版本信息回退到某次提交？revert 和 reset有什么区别？
+
+情况：有些时候开发者需要退回到某次正确的提交记录，有些时候开发者的commit错误了，这时候可以使用 `git revert` 和 `git reset`。 
+
+- `git revert`： 撤销某次操作，此次操作之前的commit都会被保留。
+- `git reset`： 撤销某次提交，但是此次之后的修改都会被退回到暂存区。
+
+```
+## 强制回退到某次提交，且需要强制提交
+git reset ——hard commit_hash 
+git push origin master --force 
+
+## 回退到某提提交，保存提交commit记录, 重新commit
+git revert commit_hash
+git add .
+git commit -m "revert"
+git push origin master
+```
+
+
+
+
+
 原文链接：[https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9](https://www.yuque.com/docs/share/cc5f2761-c72b-420e-bd26-448d645691ef#d41d8cd9)
 
