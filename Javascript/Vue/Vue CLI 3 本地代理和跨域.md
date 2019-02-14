@@ -42,7 +42,7 @@ module.exports = {
           if (proxyRes.headers['set-cookie']) {
             // 域名信息与实际业务相关
             proxyRes.headers['set-cookie'] = proxyRes.headers['set-cookie'].map(v => {
-              return v.replace('domain=.mufeng.me', 'domain=' + originHost.split(':')[0])
+              return v.replace('domain=.xxx.com', 'domain=' + originHost.split(':')[0])
             })
           }
         }
