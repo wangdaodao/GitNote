@@ -5,7 +5,8 @@ vue cli脚手架前端调后端数据接口时候的本地代理跨域问题：
 如在本地 `localhost` 访问接口 `http://www.exaple.com:8602/` 是要跨域的，会报错：
 
 ```
-XMLHTTPRequest can not load http://www.exaple.com:8602/. Response to preflight request doesn’t pass access control…. 
+XMLHTTPRequest can not load http://www.exaple.com:8602/. 
+Response to preflight request doesn’t pass access control…. 
 ```
 
 ## 解决方案
