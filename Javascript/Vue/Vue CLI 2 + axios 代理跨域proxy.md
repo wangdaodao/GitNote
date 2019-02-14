@@ -68,3 +68,13 @@ axios.post(process.env.API_HOST+'user/login', .then(res => {
 ## 第二步：
 
 后端服务器配置一下`cros`跨域即可，就是`access-control-allow-origin：*`允许所有访问的意思。
+
+## 关于cookie
+
+`Window`文件路径一般是`C:\Window\System32\drivers\etc`，`Mac`则直接前往文件夹`/etc/hosts`，打开`hosts`文件，在这一段下面把`localhost`设置进去
+
+```
+localhost                   www.exaple.com    
+```
+
+此时我们已经完全解决了跨域问题，以及本地测试后台无法向我们本地环境设置`cookie`的情况了。
