@@ -210,10 +210,8 @@ Random.extend({
 
 Random.constellation()
 // => "水瓶座"
-
 Mock.mock('@constellation')
 // => "天蝎座"
-
 Mock.mock({
   constellation: '@constellation'
 })
@@ -221,10 +219,8 @@ Mock.mock({
 
 Random.weekday()
 // => "Saturday"
-
 Mock.mock('@weekday')
 // => "Saturday"
-
 Mock.mock({
   weekday: '@weekday'
 })
@@ -232,13 +228,10 @@ Mock.mock({
 
 Random.sex()
 // => "男"
-
 Mock.mock('@sex')
 // => "男"
-
 Mock.mock({
   sex: '@sex'
 })
 // => { sex: "男" }
-
 ```
