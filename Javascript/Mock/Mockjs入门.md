@@ -196,14 +196,49 @@ Random.extend({
   constellation: function(date) {
     var constellations = ['白羊座', '金牛座', '双子座', '巨蟹座', '狮子座', '处女座', '天秤座', '天蝎座', '射手座', '摩羯座', '水瓶座', '双鱼座']
     return this.pick(constellations)
+  },
+  weekday: function(date) {
+    var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return this.pick(weekdays);
+  },
+  sex: function(date) {
+    var sexes = ['男', '女', '中性', '未知'];
+    return this.pick(sexes);
   }
 })
+
+
 Random.constellation()
 // => "水瓶座"
-Mock.mock('@CONSTELLATION')
+
+Mock.mock('@constellation')
 // => "天蝎座"
+
 Mock.mock({
-    constellation: '@CONSTELLATION'
+  constellation: '@constellation'
 })
 // => { constellation: "射手座" }
+
+Random.weekday()
+// => "Saturday"
+
+Mock.mock('@weekday')
+// => "Saturday"
+
+Mock.mock({
+  weekday: '@weekday'
+})
+// => { weekday: "Saturday" }
+
+Random.sex()
+// => "男"
+
+Mock.mock('@sex')
+// => "男"
+
+Mock.mock({
+  sex: '@sex'
+})
+// => { sex: "男" }
+
 ```
