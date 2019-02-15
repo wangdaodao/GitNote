@@ -17,54 +17,69 @@
 npm install mockjs --save-dev
 ```
 
-### 2. 新建一个mock.js的文件
+### 2. 配置
+
+为了只在开发环境使用`mock.js`，而打包到生产环境时自动不使用`mock.js`，做以下配置：
+
+`config`目录下`dev.env.js`
+
+```
+'use strict'
+const merge = require('webpack-merge')
+const prodEnv = require('./prod.env')
+
+module.exports = merge(prodEnv, {
+  NODE_ENV: '"development"',
+  Mock: true
+})
+```
+
+`config`目录下`prod.env.js`
+
+```
+'use strict'
+
+module.exports = {
+  NODE_ENV: '"production"',
+  Mock: false
+}
+```
+
+`src`目录下`main.js`
+
+```
+process.env.Mock && require('./mock/mock.js')
+```
+
+### 3. 新建一个mock.js的文件
 
 ![新建](https://raw.githubusercontent.com/wangdaodao/GitImg/master/img/20190215080658.png)
-
-### 3. 在main.js中引入新建的mock.js文件和axios
-
-```
-import Mock from './mock/mock.js';
-```
 
 ### 4. 在mock.js文件中编写响应数据
 
 ```
-import Mock from 'mockjs';
-
-const objTest = {
-  a:"aa",
-  b:"bb",
-  c:"cc",
-  d:"dd"
-}
-var arr = [11,22,33];
-
-var fun = function(x){
-  return x + 10;
-}
-Mock.mock("http://text.com",{
-  "name1|1-3":  'a',
-  "name2|2": 'b',
-  "name3|+1": 3,
-  "name4|1-4": 2,
-  "name5|1-4.5-8": 1,
-  "name6|1": true,
-  "name7|1-3": true,
-  "name8|1-4": objTest,
-  "name9|2": objTest,
-  "name10|1": arr,
-  "name11|1-3": arr,
-  "name12|2": arr,
-  "name13": fun(10),
-  "name14": /[a-z][A-Z]/,
-  "name15": /\d{1,3}/,
-  "name16": "@FIRST",
-  "name17": "@LAST",
-  "name18": "@email",
-  "name19": "@date",
-  "name20": "@image"
-});
+ // 引入mockjs
+ const Mock = require('mockjs')
+ // 获取 mock.Random 对象
+ const Random = Mock.Random
+ // mock一组数据
+ const produceNewsData = function () {
+  let articles = []
+  for (let i = 0; i < 100; i++) {
+    let newArticleObject = {
+      title: Random.csentence(5, 30), //  Random.csentence( min, max )
+      thumbnail_pic_s: Random.dataImage('300x250', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
+      author_name: Random.cname(), // Random.cname() 随机生成一个常见的中文姓名
+      date: Random.date() + ' ' + Random.time() // Random.date()指示生成的日期字符串的格式,默认为yyyy-MM-dd；Random.time() 返回一个随机的时间字符串
+    }
+    articles.push(newArticleObject)
+  }
+  return {
+    data: articles
+  }
+ }
+ // 拦截ajax请求，配置mock的数据
+ Mock.mock('/api/test', 'get', produceNewsData)
 ```
 
 ### 5. 使用axios请求数据
@@ -76,7 +91,7 @@ export default {
   },
   methods: {
     getTest(){
-        this.$http.get('http://text.com').then(function(res){
+        this.$http.get('/api/test').then(function(res){
             console.log(res.data);
         });
     }
@@ -85,6 +100,6 @@ export default {
 </script>
 ```
 
-![效果](https://raw.githubusercontent.com/wangdaodao/GitImg/master/img/20190215081041.png)
+![效果](https://raw.githubusercontent.com/wangdaodao/GitImg/master/img/20190215084305.png)
 
 例子中的[代码](https://github.com/wangdaodao/Vue-init)，我已经提交到GitHub上，克隆下来直接安装运行可以看到效果，欢迎Star。
